@@ -1,0 +1,86 @@
+:root{
+    --color1: #1E1E1E;
+    --color2: #4481F8;
+    --color3: #FF383C;
+    --color4: #757575;
+    --color5: #FFCC00;
+    --font-family: "Sen";
+    /* Só pra começar, peguei algumas cores do protótipo do figma, vamos ajustando*/
+}
+
+/* Seletor universal*/
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* Header */
+
+header{
+    background:var(--color4);
+    padding:40px;
+    align-items: center;
+    display:flex;
+    justify-content:space-between;
+}
+
+.grupoBotoes{
+    display:flex;
+    gap:10px;
+}
+
+.botoes{
+    width:35px;
+    height:35px;
+    border-radius:50px;
+    background:var();
+}
+
+#lanterna{
+    width:35px;
+    height:35px;
+    border-radius:50px;
+    background:var();
+    margin-left:auto;
+}
+
+#lanterna:hover{
+    background:var(--color5);
+}
+
+
+/* Main */
+main{
+    padding:50px;
+    align-itens:center;
+    display:flex;
+    justify-content:space-between;
+}
+
+#imgCamera{
+    width:500px;
+    height:500px;   
+}
+
+footer{
+    background:var(--color4);
+    padding:40px;
+    align-items: center;
+    display:flex;
+    justify-content:center;
+}
+
+#foto{
+    width:80px;
+    height:40px;
+    border-radius:50px;
+    background:var(--color2);
+}
+
+#video{
+    width:80px;
+    height:40px;
+    border-radius:50px;
+    background:var();
+}
