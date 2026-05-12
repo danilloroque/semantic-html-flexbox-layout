@@ -18,17 +18,19 @@
     </header>
 
     <main>
-        <img src="./src/assets/fotoTeste.jpg" alt="imagem" id="imgCamera">
+        <video id="cameraPreview" autoplay muted playsinline></video>
+        <canvas id="canvasCamera" hidden></canvas>
     </main>
 
     <footer>
         <div id="fotoVideo">
             <button id="foto">Foto</button>
-            <button id="video">Vídeo</button>
+            <button id="modoVideo">Vídeo</button>
         </div>
         <div>
-            <button id="tirarFoto"></button>
+            <button id="tirarFoto" aria-label="Tirar foto"></button>
         </div>
+        <p id="resultadoCamera" aria-live="polite"></p>
     </footer>
 
     <script src="./src/js/script.js"></script>
