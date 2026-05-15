@@ -6,6 +6,13 @@ const resultadoCamera = document.getElementById("resultadoCamera");
 
 let cameraStream = null;
 
+function login(){
+
+    let user_email = prompt("Insira seu email:")
+    let user_nome = prompt("Insira seu nome:")
+    alert(`Seja Bem vindo ${user_nome}!`)
+}
+
 // Funcao que habilita a camera no navegador.
 async function configurarCamera(){
     if(!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia){
@@ -47,4 +54,5 @@ function tirarFoto(){
 
 botaoTirarFoto.addEventListener("click", tirarFoto);
 
+login();
 configurarCamera();
