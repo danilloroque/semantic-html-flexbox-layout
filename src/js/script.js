@@ -4,7 +4,9 @@ const canvas = document.getElementById("canvasCamera");
 const botaoTirarFoto = document.getElementById("tirarFoto");
 const resultadoCamera = document.getElementById("resultadoCamera");
 
+
 let cameraStream = null;
+
 
 function login(){
 
@@ -12,8 +14,9 @@ function login(){
     let user_nome = prompt("Insira seu nome:")
     alert(`Seja Bem vindo ${user_nome}!`)
 }
-
-// Funcao que habilita a camera no navegador.
+/////////////////////////////////////////////////////////////////
+/////////// Função que habilita a camera no navegador.//////////
+////////////////////////////////////////////////////////////////
 async function configurarCamera(){
     if(!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia){
         resultadoCamera.innerText = "Seu navegador nao suporta acesso a camera.";
@@ -49,10 +52,58 @@ function tirarFoto(){
     canvas.height = videoElemento.videoHeight;
 
     context.drawImage(videoElemento, 0, 0, canvas.width, canvas.height);
-    resultadoCamera.innerText = "Foto capturada no canvas.";
+    resultadoCamera.innerText = "Foto tirada com sucesso!";
 }
 
 botaoTirarFoto.addEventListener("click", tirarFoto);
 
-login();
+
 configurarCamera();
+login();
+
+/////////////////////////////////////////////////////////////////
+/////////// Botão de pesquisa.//////////
+////////////////////////////////////////////////////////////////
+
+const botaoPesquisa = document.getElementById("pesquisa");
+
+botaoPesquisa.addEventListener("click", () => {
+    let popupPesquisa = document.getElementById("popupPesquisa");
+
+    if(!popupPesquisa){
+        document.body.insertAdjacentHTML(
+            "beforeend",
+            `
+            <div id="popupPesquisa" class="popup-pesquisa">
+                <input id="inputPesquisa" type="search" placeholder="Digite sua pesquisa...">
+                <p id="resultadoPesquisa" class="resultado-pesquisa oculto"></p>
+            </div>
+            `
+        );
+
+        popupPesquisa = document.getElementById("popupPesquisa");
+
+        const inputPesquisa = document.getElementById("inputPesquisa");
+        const resultadoPesquisa = document.getElementById("resultadoPesquisa");
+
+        inputPesquisa.addEventListener("input", () => {
+            const textoPesquisa = inputPesquisa.value.trim();
+
+            if(textoPesquisa){
+                resultadoPesquisa.innerText = `Resultados para: ${textoPesquisa}`;
+                resultadoPesquisa.classList.remove("oculto");
+            }else{
+                resultadoPesquisa.innerText = "";
+                resultadoPesquisa.classList.add("oculto");
+            }
+        });
+    }else{
+        popupPesquisa.classList.toggle("oculto");
+    }
+
+    const inputPesquisa = document.getElementById("inputPesquisa");
+
+    if(!popupPesquisa.classList.contains("oculto")){
+        inputPesquisa.focus();
+    }
+});
