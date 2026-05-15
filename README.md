@@ -1,0 +1,9 @@
+Nome: Allan Ragazzo Freire / Rm: 569534
+
+Nome: Danilo Roque Souza Machado / Rm: 573831
+
+Nome: Leonardo Scalisse Silva / Rm: 569114
+
+Nome: Pietro Schimidt Ruotolo / Rm: 570632
+
+Nome: Valdemar da Rocha Formiga neto / Rm: 573382
